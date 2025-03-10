@@ -1,0 +1,27 @@
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    border: none;
+    background-color: @blue;
+    outline: none;
+    color: @white;
+    font-family: @font1, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: @blue--hover;
+    }
+}

@@ -1,0 +1,95 @@
+html,
+body {
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: @gray;
+    background-position: 0 0, 0 0;
+    background-size: auto, 100% auto;
+    background-repeat: repeat, repeat-y;
+    color: @black;
+    font-family: @font1;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 25px;
+    overflow-x: hidden;
+    padding-top: 105px;
+
+    @media @bw1340 {
+      padding-top: 75px;
+    }
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    flex: 0 0 auto;
+}
+  
+a {
+    color: @black;
+    outline: none;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+h1 {
+  font-family: @font2;
+  font-weight: 700;
+}
+
+input,
+textarea,
+select {
+  box-shadow: none;
+  outline: none;
+  color: @black;
+  font-family: @font1;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  &::placeholder {
+    color: #6C6C6C;
+  }
+}
+
+input:focus,
+textarea:focus {
+  &::placeholder {
+    color: transparent
+  }
+}
+
+& [href] {
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:active {
+    color: @blue--hover;
+  }
+
+  &:hover {
+    @media (hover: hover) {
+      color: @blue--hover;
+    }
+  }
+}
