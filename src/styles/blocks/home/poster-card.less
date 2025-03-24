@@ -1,0 +1,24 @@
+.poster-card {
+    height: 100%;
+
+    &__picture {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    &__img {
+        object-fit: contain;
+        height: 100%;
+    }
+
+    &__caption {
+        position: absolute;
+        bottom: -78px;
+        left: 0;
+        opacity: 0;
+        transition: .2s;
+    }
+}
