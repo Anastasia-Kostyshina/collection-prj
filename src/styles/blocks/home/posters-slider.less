@@ -1,0 +1,41 @@
+.posters-slider {
+    position: relative;
+    margin-bottom: 200px;
+
+    &_container {
+        .container();
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    &__swiper {
+        .container();
+        overflow: visible;
+    }
+
+    &__caption {
+        position: absolute;
+        bottom: -78px;
+        left: 0;
+        opacity: 0;
+        transition: .2s;
+    }
+
+    &__frame {
+        box-sizing: border-box;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: -38px;
+        left: 0;
+        right: 0;
+        width: 540px;
+        height: 540px;
+        border: 6px solid @black;
+        text-align: center;
+        z-index: 99;
+    }
+}

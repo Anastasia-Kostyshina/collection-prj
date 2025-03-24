@@ -5,6 +5,27 @@
         $('.js-pageHeader').toggleClass('scroll', $(this).scrollTop() > 50);
     });
 
+    // Initializing swiper plugin
+    const swipers = document.querySelectorAll(".js-swiper");
+
+    swipers.forEach(function (swpr) {
+      new Swiper(swpr, {
+        loop: true,
+        updateOnWindowResize: true,
+        slidesPerView: "auto",
+        centeredSlides : true,
+        freeMode: true,
+        spaceBetween: 0,
+        speed: 500,
+        simulateTouch: false,
+        navigation: {
+          nextEl: ".swiper-arrow-next",
+          prevEl: ".swiper-arrow-prev",
+          disabledClass: "arrow--disabled"
+        }
+      });
+    });
+
     // Карта 1
     const contactsMap = document.querySelector("#js-contactsMap");
     if (contactsMap) {
@@ -153,16 +174,19 @@
     const chooseAddress = document.querySelectorAll('.js-contacts__info-item');
     const chooseMap = document.querySelectorAll('.contacts__map');
 
-    chooseAddress.forEach(function (item, index) {
+    if (chooseMap) {
+        chooseAddress.forEach(function (item, index) {
 
-        item.onclick = function () {
+            item.onclick = function () {
+    
+                document.querySelector('.contacts__info-item--active').classList.remove('contacts__info-item--active');
+                item.classList.add('contacts__info-item--active');
+                document.querySelector('.contacts__map--active').classList.remove('contacts__map--active');
+                chooseMap[index].classList.add('contacts__map--active');
+    
+            };
+    
+        });
+    }
 
-            document.querySelector('.contacts__info-item--active').classList.remove('contacts__info-item--active');
-            item.classList.add('contacts__info-item--active');
-            document.querySelector('.contacts__map--active').classList.remove('contacts__map--active');
-            chooseMap[index].classList.add('contacts__map--active');
-
-        };
-
-    });
 })();
