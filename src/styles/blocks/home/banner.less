@@ -1,0 +1,70 @@
+.banner {
+    margin-bottom: 200px;
+    &__container {
+        .container();
+
+        display: flex;
+        position: relative;
+        height: 600px;
+    }
+
+    &__img {
+        position: absolute;
+        left: 87px;
+        top: 3px;
+        max-width: unset;
+        height: 31.23vw;
+        max-height: 600px;
+        min-height: 600px;
+        pointer-events: none;
+    }
+
+    &__slider {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__slide {
+        display: flex;
+        max-width: 940px;
+        width: 100%;
+    }
+
+    &__nav {
+        display: flex;
+        align-self: flex-start;
+        margin-top: 35px;
+    }
+
+    &__nav-list {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__nav-item {
+        font-family: @font2;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: 0.1s;
+
+        &--active {
+            font-weight: 700;
+            font-size: 30px;
+            color: @green;
+            cursor: default;
+        }
+    }
+
+    &__collection-card {
+        display: none;
+
+        &--active {
+            display: flex;
+        }
+    }
+}

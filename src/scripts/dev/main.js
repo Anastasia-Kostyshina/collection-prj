@@ -189,4 +189,23 @@
         });
     }
 
+    // Banner slider
+    const bannerNav = document.querySelectorAll('.banner__nav-item');
+    const bannerSlider = document.querySelectorAll('.banner__collection-card');
+
+    if (bannerSlider) {
+        bannerNav.forEach(function (item, index) {
+
+            item.onclick = function () {
+    
+                document.querySelector('.banner__nav-item--active').classList.remove('banner__nav-item--active');
+                item.classList.add('banner__nav-item--active');
+                document.querySelector('.banner__collection-card--active').classList.remove('banner__collection-card--active');
+                bannerSlider[index].classList.add('banner__collection-card--active');
+    
+            };
+    
+        });
+    }
+
 })();

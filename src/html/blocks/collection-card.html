@@ -1,0 +1,16 @@
+<article class="@@class collection-card">
+    <div class="collection-card__info">
+        <p class="collection-card__title">Коллекция <span class="collection-card__title--big">@@title</span></p>
+        <a href="#@@link" class="collection-card__btn btn">Смотреть</a>
+    </div>
+    <picture class="collection-card__picture">
+        <source
+          media="(max-width: 767px)"
+          type="image/webp"
+          srcset="@@img_mob_webp"
+        />
+        <source media="(max-width: 767px)" srcset="@@img_mob" />
+        <source type="image/webp" srcset="@@img_webp" />
+        <img src="@@img" alt="@@alt" class="collection-card__img" />
+    </picture>
+</article>
