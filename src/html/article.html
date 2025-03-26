@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('blocks/head.html')
+    <body class="body">
+        @@include('blocks/page-header.html')
+        
+        <main class="main">
+            <div class="breadcrumbs">
+                <!-- prettier-ignore -->
+                @@loop('blocks/breadcrumbs.html', [
+                  {
+                    "link": "index.html",
+                    "name": "Главная"
+                  }
+                ])
+                <div class="breadcrumbs__link breadcrumbs__link-current">Кит Харинг</div>
+            </div>
+
+            <article class="article">
+                <div class="article__container">
+                    <h1 class="article__title section-title">Кит Харинг</h1>
+
+                    <div class="article__block-top">
+                        <div class="article__text1">
+                            <p class="article__paragraph">Застенчивый очкарик и гений поп-арта Кит Харинг родился 4 мая 1958&nbsp;года в Пенсильвании.</p>
+                            <p class="article__paragraph">История его жизни вписывается в&nbsp;представления о жизни гения поп-арта: родился, жил, творил, был гомосексуалистом и рано умер от СПИДа.</p>
+                        </div>
+
+                        <figure class="article__figure1">
+                            <picture class="article__picture1">
+                                <source type="image/webp" srcset="assets/images/article/lucky-strike.webp" />
+                                <img src="assets/images/article/lucky-strike.jpg" alt="" class="article__img1" />
+                            </picture>
+                            <figcaption class="article__figcaption">
+                                1987 г.
+                            </figcaption>
+                        </figure>
+
+                        <div class="article__text2">
+                            <p class="article__paragraph">В возрасте 20-ти лет Кит удрал в Нью-Йорк, где его уже поджидали Энди Уорхол, Йоко Оно, Мадонна, Тимоти Лири, Уильям Берроуз, Жан-Мишель Баския, и конечно же наркотики.</p>
+                        </div>
+
+                        @@include('blocks/article-cover.html', {"class": "article__article-cover"})
+                    </div>
+
+                    <div class="article__text3">
+                        <p class="article__paragraph">Известность пришла к Харингу после появления его работ на стенах Нью-Йоркского метро в ранних 80-х</p>
+                        <p class="article__paragraph">Позднее, в 1986 году, он открывает свой Pop Shop, и продвигает своих узнаваемых персонажей, печатая их на майках, постерах, значках, велосипедах.</p>
+                    </div>
+                </div>
+
+                <div class="article__split">
+                    <div class="article__container">
+                        <div class="article__block-50"></div>
+
+                        <div class="article__block-50"></div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        @@include('blocks/page-footer.html')
+
+        <script src="scripts/jquery-3.7.1.min.js"></script>
+        <script src="scripts/main.min.js"></script>
+    </body>
+</html>

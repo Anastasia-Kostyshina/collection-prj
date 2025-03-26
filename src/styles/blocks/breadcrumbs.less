@@ -1,0 +1,51 @@
+.breadcrumbs {
+    .container();
+
+    display: flex;
+    gap: 14px;
+    padding-top: 20px;
+
+    @media @bw1340 {
+        gap: 15px;
+    }
+
+    @media @bw768 {
+        display: none;
+    }
+
+    &__link {
+        position: relative;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 25px;
+        text-decoration: none;
+        color: #7A7A7A;
+
+        &::after {
+            content: "/";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -10px;
+            color: @black;
+
+            @media @bw1340 {
+                right: -10px;
+            }
+        }
+
+        @media @bw1340 {
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+
+    &__link-current {
+        color: @black;
+        cursor: default;
+        &::after {
+            content: "";
+            display: none;
+        }
+    }
+}
