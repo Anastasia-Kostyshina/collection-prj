@@ -1,0 +1,42 @@
+.table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+
+    &__th {
+        box-sizing: border-box;
+        padding: 10px;
+        text-transform: uppercase;
+        height: 100px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+
+        &:nth-child(1) {
+            background-color: @yellow;
+        }
+
+        &:nth-child(2) {
+            background-color: @green;
+        }
+
+        &:nth-child(3) {
+            background-color: @orange;
+        }
+
+        &:nth-child(4) {
+            background-color: @blue_light;
+        }
+    }
+
+    &__tr {
+        border-bottom: 1px solid @black;
+    }
+    
+    &__td {
+        box-sizing: border-box;
+        padding: 10px;
+        height: 80px;
+    }
+}
