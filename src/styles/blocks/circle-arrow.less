@@ -11,8 +11,13 @@
     stroke: @black;
     background-color: @gray;
     border-radius: 50%;
+    transition: .2s;
 
     &--right {
         transform: scale(-1, 1);
+    }
+
+    &.arrow--disabled {
+        stroke: #1111114D;
     }
 }
