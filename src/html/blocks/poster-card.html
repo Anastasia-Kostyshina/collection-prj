@@ -1,5 +1,12 @@
 <article class="poster-card">
     <picture class="poster-card__picture">
+        <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="@@img_mob_webp"
+        />
+        <source media="(max-width: 767px)" srcset="@@img_mob" />
+        <source type="image/webp" srcset="@@img_webp" />
         <img src="@@img" alt="@@alt" class="poster-card__img" />
     </picture>
     <div class="poster-card__caption">@@caption</div>
