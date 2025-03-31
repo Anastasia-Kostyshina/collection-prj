@@ -9,4 +9,24 @@
         max-width: 539px;
         width: 100%;
     }
+
+    h2 {
+        margin: 1.3em 0 0.75em;
+        font-family: @font2;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0.05em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media @bw768 {
+        font-size: 30px;
+        }
+    }
 }

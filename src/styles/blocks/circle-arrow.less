@@ -1,12 +1,18 @@
 .circle-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     background-color: unset;
     border: 0;
     outline: 0;
     width: 54px;
     height: 54px;
+    stroke: @black;
+    background-color: @gray;
+    border-radius: 50%;
 
     &--right {
-        transform: rotate(180deg);
+        transform: scale(-1, 1);
     }
 }
