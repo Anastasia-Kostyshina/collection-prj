@@ -1,0 +1,82 @@
+.count-picker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+
+    &__box {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__label {
+        font-weight: 600;
+    }
+
+    &__count {
+        padding: 0;
+        border: 0;
+        background-color: unset;
+        width: 60px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    &__plus,
+    &__minus {
+        position: relative;
+        display: block;
+        width: 24px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    &__plus {
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 18px;
+          left: 6px;
+          width: 13px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: @black;
+          transform-origin: 50% 50%;
+          transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        &::before {
+            top: 5px;
+            transform: translate(0, 6px) rotate(90deg);
+        }
+
+        &::after {
+            top: 17px;
+            transform: translate(0, -6px) rotate(180deg);
+        }
+    }
+
+    &__minus {
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 17px;
+          left: 6px;
+          width: 13px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: @black;
+          transform-origin: 50% 50%;
+          transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        &::before {
+            top: 17px;
+            transform: translate(0, -6px) rotate(180deg);
+        }
+    }
+}

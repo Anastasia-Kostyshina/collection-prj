@@ -1,0 +1,57 @@
+.radio {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 50px;
+
+    @media @bw768 {
+      margin-bottom: 24px;
+    }
+    
+    &__item {
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      min-height: 25px;
+      color: @black;
+      cursor: pointer;
+    }
+
+    &__input {
+        .is-hidden();
+
+        &:checked {
+            &~.radio__mark {
+              background-color: @black;
+            }
+        }
+    }
+
+    &__mark {
+        box-sizing: border-box;
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-bottom: 2px;
+        border: 1.5px solid @black;
+        border-radius: 50%;
+        padding: 3px;
+        background-clip: content-box;
+        background-color: transparent;
+        transition: background-color 0.2s;
+    }
+
+    &__label {
+        margin-left: 14px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+
+        @media @bw768 {
+          font-size: 14px;
+          line-height: 19px;
+        }
+    }
+}
