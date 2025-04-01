@@ -1,0 +1,35 @@
+<div class="@@class poster-info">
+    <picture class="poster-info__picture">
+        <source
+          media="(max-width: 767px)"
+          type="image/webp"
+          srcset="@@img_mob_webp"
+        />
+        <source media="(max-width: 767px)" srcset="@@img_mob" />
+        <source type="image/webp" srcset="@@img_webp" />
+        <img src="@@img" alt="@@alt" class="poster-info__img" />
+    </picture>
+
+    <div class="poster-info__description">
+        <h3>Постер @@title | @@size см</h3>
+        <form class="poster-info__form form" id="js-addToCart">
+            <div class="poster-info__price"><span class="js-price">1 850</span> ₽</div>
+
+            <div class="radio field__radio">
+                <label class="radio__item">
+                  <input class="radio__input js-posterType" type="radio" name="poster-type" data-price="1 850" value="paper-poster" checked="">
+                  <span class="radio__mark"></span>
+                  <span class="radio__label">Бумажный постер</span>
+                </label>
+
+                <label class="radio__item">
+                  <input class="radio__input js-posterType" type="radio" name="poster-type" data-price="350" value="electronic-poster">
+                  <span class="radio__mark"></span>
+                  <span class="radio__label">Электронный постер</span>
+                </label>
+            </div>
+        </form>
+
+        
+    </div>
+</div>

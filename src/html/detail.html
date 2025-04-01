@@ -22,11 +22,22 @@
                 ])
                 <a href="#" class="breadcrumbs__link breadcrumbs__link-current">Постер Andy Mouse | 60-60 см</a>
             </div>
-            <article class="detail">
+            <article class="detail content">
                 <div class="detail__container">
-                    <div class="detail__card"></div>
+                    <!-- prettier-ignore -->
+                    @@include('blocks/poster-info.html', {
+                        "class": "detail__poster-info",
+                        "img": "assets/images/posters/poster3.jpg",
+                        "img_webp": "assets/images/posters/poster3.webp",
+                        "img_mob": "assets/images/posters/poster3_mob.jpg",
+                        "img_mob_webp": "assets/images/posters/poster3_mob.webp",
+                        "alt": "Andy Mouse Green Orange",
+                        "title": "Andy Mouse",
+                        "size": "60-60",
+                        "price": "1 850"
+                    })
 
-                    <div class="detail__description content">
+                    <div class="detail__description">
                         <h5>Описание</h5>
 
                         <p>Энди Маус — серия шелкографических принтов, созданная американским художником Китом Харингом в 1986 году. Персонаж Энди Маус-это сплав диснеевского Микки Мауса и Энди Уорхола.</p> 
