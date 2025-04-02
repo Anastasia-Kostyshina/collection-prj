@@ -52,24 +52,18 @@
         flex: 1;
         font-weight: 300;
         font-size: 16px;
-        line-height: 22px;
+        line-height: 20px;
 
         @media @bw768 {
           font-size: 14px;
           line-height: 19px;
         }
+    }
 
-        &--s {
-          font-size: 14px;
-          line-height: 19px;
-        }
-
-        &--mob-xs {
-          @media @bw768 {
-            font-size: 12px;
-            line-height: 16px;
-          }
-        }
+    &__link {
+      color: @blue;
+      text-decoration: underline;
+      text-underline-position: from-font;
     }
 
     &--disabled {

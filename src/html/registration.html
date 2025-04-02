@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('blocks/head.html')
+    <body class="body">
+        @@include('blocks/page-header.html')
+        <main class="main">
+            <article class="registration">
+                <div class="registration__container">
+                    <h1 class="registration__title section-title section-title--s">Регистрация</h1>
+                    <p class="registration__caption">Уже есть авторизованный аккаунт?<a href="#" class="registration__auth-link">Войти</a></p>
+
+                    <form class="registration__form form" id="js-eventForm">
+                        <div class="form__list">
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label required">E-mail</span>
+                                <input class="field__input" type="email" placeholder="Введи свой e-mail" name="email" required>
+                            </label>
+    
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label">Телефон</span>
+                                <input class="field__input" type="tel" placeholder="Укажи свой телефон" name="phone">
+                            </label>
+    
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label required">Имя</span>
+                                <input class="field__input" type="text" placeholder="Укажи имя" name="name" required>
+                            </label>
+    
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label">Фамилия</span>
+                                <input class="field__input" type="text" placeholder="Укажи фамилию" name="last_name">
+                            </label>
+    
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label required">Пароль</span>
+                                <input class="field__input" type="password" placeholder="Придумай пароль" name="password" required>
+                            </label>
+    
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label required">Подтверждение пароля</span>
+                                <input class="field__input" type="password" placeholder="Повтори пароль" name="password" required>
+                            </label>
+    
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label">Страна</span>
+                                <select class="field__select js-selectric" name="city">
+                                    <option value="Россия">Россия</option>
+                                    <option value="Австралия">Австралия</option>
+                                    <option value="Австрия">Австрия</option>
+                                    <option value="Азербайджан">Азербайджан</option>
+                                    <option value="Албания">Албания</option>
+                                </select>
+                            </label>
+
+                            <label class="field form__field form__field--w50">
+                                <span class="field__label">Дата рождения</span>
+
+                                <div class="field__date">
+                                    <div class="field__date-inputs">
+                                      <input class="field__input field__date-input js-dateDay" type="text" placeholder="дд" readonly>
+                                      <input class="field__input field__date-input js-dateMonth" type="text" placeholder="мм" readonly>
+                                      <input class="field__input field__date-input field__date-input--year js-dateYear" type="text" placeholder="гг" readonly>
+
+                                      <svg width="24" height="24" class="field__date-icon">
+                                        <use xlink:href="assets/icons/symbols.svg#calendar"></use>
+                                      </svg>
+                                    </div>
+                    
+                                    <input class="field__date-picker js-dateInput" type="text" name="date" readonly required/>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="field form__field form__check-list">
+                            <label class="check form__check">
+                              <input
+                                type="checkbox"
+                                name="agree"
+                                class="check__input"
+                                required
+                                checked
+                              />
+                             <span class="check__mark"></span>
+                             <span class="check__label">
+                                Нажимая «Создать аккаунт», я подтверждаю, что ознакомился с положениями, указанными в статьях <a href="#" class="check__link">Условия использования</a> и <a href="#" class="check__link">Политика конфиденциальности.</a>
+                              </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn form__submit">Создать аккаунт</button>
+                    </form>
+                </div>
+            </article>
+        </main>
+
+        @@include('blocks/page-footer.html')
+
+        <script src="scripts/jquery-3.7.1.min.js"></script>
+        <script src="scripts/main.min.js"></script>
+    </body>
+</html>
