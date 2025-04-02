@@ -9,7 +9,7 @@
                     <h1 class="registration__title section-title section-title--s">Регистрация</h1>
                     <p class="registration__caption">Уже есть авторизованный аккаунт?<a href="#" class="registration__auth-link">Войти</a></p>
 
-                    <form class="registration__form form" id="js-eventForm">
+                    <form class="registration__form form" id="js-registrationForm">
                         <div class="form__list">
                             <label class="field form__field form__field--w50">
                                 <span class="field__label required">E-mail</span>
@@ -18,7 +18,7 @@
     
                             <label class="field form__field form__field--w50">
                                 <span class="field__label">Телефон</span>
-                                <input class="field__input" type="tel" placeholder="Укажи свой телефон" name="phone">
+                                <input class="field__input js-mobileMask" type="tel" placeholder="Укажи свой телефон" name="phone">
                             </label>
     
                             <label class="field form__field form__field--w50">
@@ -41,7 +41,7 @@
                                 <input class="field__input" type="password" placeholder="Повтори пароль" name="password" required>
                             </label>
     
-                            <label class="field form__field form__field--w50">
+                            <div class="field form__field form__field--w50">
                                 <span class="field__label">Страна</span>
                                 <select class="field__select js-selectric" name="city">
                                     <option value="Россия">Россия</option>
@@ -50,16 +50,16 @@
                                     <option value="Азербайджан">Азербайджан</option>
                                     <option value="Албания">Албания</option>
                                 </select>
-                            </label>
+                            </div>
 
-                            <label class="field form__field form__field--w50">
+                            <label class="field form__field form__field--w50 js-dateField">
                                 <span class="field__label">Дата рождения</span>
 
                                 <div class="field__date">
                                     <div class="field__date-inputs">
                                       <input class="field__input field__date-input js-dateDay" type="text" placeholder="дд" readonly>
                                       <input class="field__input field__date-input js-dateMonth" type="text" placeholder="мм" readonly>
-                                      <input class="field__input field__date-input field__date-input--year js-dateYear" type="text" placeholder="гг" readonly>
+                                      <input class="field__input field__date-input js-dateYear" type="text" placeholder="гг" readonly>
 
                                       <svg width="24" height="24" class="field__date-icon">
                                         <use xlink:href="assets/icons/symbols.svg#calendar"></use>
@@ -96,6 +96,14 @@
         @@include('blocks/page-footer.html')
 
         <script src="scripts/jquery-3.7.1.min.js"></script>
+
+        <script src="scripts/jquery.selectric.min.js"></script>
+        <script src="scripts/jquery.mask.min.js"></script>
+        <script src="scripts/air-datepicker.js"></script>
+        <script src="scripts/jquery.validate.min.js"></script>
+        <script src="scripts/jquery.validate-init.js"></script>
+        <script src="scripts/toastr.min.js"></script>
+
         <script src="scripts/main.min.js"></script>
     </body>
 </html>
