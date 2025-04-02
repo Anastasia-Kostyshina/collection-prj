@@ -244,7 +244,7 @@
         plus.addEventListener('click', function(){
             inputValue ++;
             input.value = inputValue;
-            itogPrice();
+            totalPosterCost();
         });
 
         minus.addEventListener('click', function(){
@@ -252,19 +252,18 @@
             input.value = inputValue;
             if(inputValue < 1) {
                 input.value = 1;
-            } else {
-                itogPrice();
             }
+            totalPosterCost();
         });
     }
 
     // Итоговая стоимость выбранного постера
 
-    function itogPrice() {
-        let priceA = document.querySelector('.js-price');
+    function totalPosterCost() {
+        let itemPrice = document.querySelector('.js-price');
         let input = document.querySelector('.js-count');
-        let sumV = parseInt(priceA.dataset.productPrice) * input.value;
-        priceA.innerText = sumV;
+        let totalCost = parseInt(itemPrice.dataset.productPrice) * input.value;
+        itemPrice.innerText = totalCost;
     }
 
     
