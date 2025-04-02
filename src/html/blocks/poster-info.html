@@ -13,7 +13,7 @@
     <div class="poster-info__description">
         <h3>Постер @@title | @@size см</h3>
         <form class="poster-info__form poster-form" id="js-addToCart">
-            <div class="poster-form__price"><span class="js-price">1 850</span> ₽</div>
+            <div class="poster-form__price"><span class="js-price" data-product-price="1850">1850</span> ₽</div>
 
             <div class="radio poster-form__radio">
                 <label class="radio__item">
@@ -33,7 +33,7 @@
                 <label class="count-picker__label" for="poster-count">Количество</label>
                 <div class="count-picker__box">
                     <div class="count-picker__plus js-plus"></div>
-                    <input class="count-picker__count" name="count" id="poster-count" type="text" value="1" inputmode="decimal">
+                    <input class="count-picker__count js-count" name="count" id="poster-count" type="text" value="1" inputmode="decimal">
                     <div class="count-picker__minus js-minus"></div>
                 </div>
             </div>

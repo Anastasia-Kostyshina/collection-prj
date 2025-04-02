@@ -231,25 +231,44 @@
         });
     }
 
-    // Сount picker
+    // Подсчет количества постеров
 
     const addToCart = document.querySelectorAll('#js-addToCart');
 
     if (addToCart) {
-        $('.js-minus').click(function () {
-            let $input = $(this).parent().find('input');
-            let count = parseInt($input.val()) - 1;
-            count = count < 1 ? 1 : count;
-            $input.val(count);
-            $input.change();
-            return false;
+        let plus = document.querySelector('.js-plus');
+        let minus = document.querySelector('.js-minus');
+        let input = document.querySelector('.js-count');
+        let inputValue = input.value;
+
+        plus.addEventListener('click', function(){
+            inputValue ++;
+            input.value = inputValue;
+            itogPrice();
         });
-        $('.js-plus').click(function () {
-            let $input = $(this).parent().find('input');
-            $input.val(parseInt($input.val()) + 1);
-            $input.change();
-            return false;
+
+        minus.addEventListener('click', function(){
+            inputValue --;
+            input.value = inputValue;
+            if(inputValue < 1) {
+                input.value = 1;
+            } else {
+                itogPrice();
+            }
         });
     }
+
+    // Итоговая стоимость выбранного постера
+
+    function itogPrice() {
+        let priceA = document.querySelector('.js-price');
+        let input = document.querySelector('.js-count');
+        let sumV = parseInt(priceA.dataset.productPrice) * input.value;
+        priceA.innerText = sumV;
+    }
+
+    
+
+   
 
 })();
