@@ -1,0 +1,88 @@
+.pp {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 75px 95px 75px;
+    background-color: rgba(138, 137, 137, 0.98);
+    overflow-y: auto;
+    z-index: 110;
+    display: none;
+
+    @media @bw1660 {
+      padding: 60px 30px 60px;
+    }
+
+    @media @bw768 {
+      padding: 60px 0px 0px;
+    }
+
+    &__wrapper {
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 810px;
+      margin: auto;
+      background-color: @gray;
+      background-position: 0 0;
+      background-size: auto;
+      background-repeat: repeat;
+
+      @media @bw1660 {
+        max-width: 633px; 
+      }
+    }
+
+    &__container {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 67px;
+
+      @media @bw768 {
+        padding: 9px;
+      }
+    }
+
+    &__sticky-close {
+      position: sticky;
+      top: 0;
+      align-self: flex-end;
+      width: 0;
+      height: 0;
+    }
+
+    &__x-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+
+      @media @bw768 {
+        top: 13px;
+        right: 8px;
+      }
+    }
+
+    &__img-wrap {
+      padding: 42px 45px;
+      border: 1px solid #7A7A7A;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+}
+
+@supports (backdrop-filter: blur(50px)) {
+    .pp {
+        background-color: rgba(28, 27, 27, 0.4);
+        backdrop-filter: blur(50px);
+    }
+}

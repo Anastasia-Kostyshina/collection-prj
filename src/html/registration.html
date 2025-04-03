@@ -33,18 +33,24 @@
     
                             <label class="field form__field form__field--w50">
                                 <span class="field__label required">Пароль</span>
-                                <input class="field__input" type="password" placeholder="Придумай пароль" name="password" required>
+                                <input class="field__input js-new-password" type="password" placeholder="Придумай пароль" name="password" required>
                             </label>
     
                             <label class="field form__field form__field--w50">
                                 <span class="field__label required">Подтверждение пароля</span>
-                                <input class="field__input" type="password" placeholder="Повтори пароль" name="password" required>
+                                <input class="field__input js-confirm-password" type="password" placeholder="Повтори пароль" name="password" required onChange="isPasswordMatch();">
+                                <div class="field__check-password js-check-password"></div>
                             </label>
     
-                            <div class="field form__field form__field--w50">
-                                <span class="field__label">Страна</span>
-                                <select class="field__select js-selectric" name="city">
+                            <div class="field form__field form__field--w50 js-select-field">
+                                
+                                <label class="field__label" for="city-select">Страна</label>
+                                <select id="city-select" class="field__select js-selectric" name="city">
                                     <option value="Россия">Россия</option>
+                                    <option value="Австралия">Австралия</option>
+                                    <option value="Австрия">Австрия</option>
+                                    <option value="Азербайджан">Азербайджан</option>
+                                    <option value="Албания">Албания</option>
                                     <option value="Австралия">Австралия</option>
                                     <option value="Австрия">Австрия</option>
                                     <option value="Азербайджан">Азербайджан</option>

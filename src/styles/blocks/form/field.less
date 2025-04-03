@@ -1,4 +1,5 @@
 .field {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -133,10 +134,21 @@
     label.error,
     span.error {
         display: block;
-        margin: 5px 0 0;
+        margin: -1px 0 0;
+        padding-top: 5px;
+        border-top: 1px solid @red;
         color: @red;
         font-size: 14px;
         line-height: 19px;
         order: 3;
+    }
+
+    &__check-password {
+        position: absolute;
+        bottom: -25px;
+        margin: 5px 0 0;
+        color: @red;
+        font-size: 14px;
+        line-height: 19px;
     }
 }

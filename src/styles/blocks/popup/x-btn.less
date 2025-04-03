@@ -1,0 +1,26 @@
+.x-btn {
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media @bw768 {
+        height: 36px;
+        width: 36px;
+    }
+
+    &__icon {
+        margin: auto;
+        color: @black;
+        pointer-events: none;
+
+        @media @bw768 {
+            height: 21px;
+            width: 21px;
+        }
+    }
+}

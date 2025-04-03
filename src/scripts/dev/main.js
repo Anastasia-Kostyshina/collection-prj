@@ -1,6 +1,49 @@
 (function () {
     "use strict";
 
+    // root - html 
+    const root = document.documentElement;
+
+    // Modal window for images
+    const imagePP = document.querySelector("#js-imagePP");
+
+    if (imagePP) {
+        const imageOpenBtn = document.querySelector("#js-pictureOpen");
+        const closeImagePP = function (event) {
+          function close() {
+            document.removeEventListener("keyup", closeImagePP);
+            imagePP.removeEventListener("click", closeImagePP);
+            root.classList.remove("show-image-popup");
+          }
+          switch (event.type) {
+            case "keyup":
+              if (event.key === "Escape" || event.keyCode === 27) close();
+              break;
+            case "click":
+              if (
+                event.target === this ||
+                event.target.classList.contains("js-ppCloseBtn")
+              )
+                close();
+              break;
+          }
+        };
+        imageOpenBtn.addEventListener("click", function () {
+          root.classList.add("show-image-popup");
+          document.addEventListener("keyup", closeImagePP);
+          imagePP.addEventListener("click", closeImagePP);
+        });
+
+        // Add image in popup
+        let imgOrigin = document.getElementById("js-image");
+        let imgInsert = document.getElementById("js-image-insert");
+
+        imageOpenBtn.onclick = function(){
+          imgInsert.src = imgOrigin.src;
+        }
+    }
+
+    // Header on scroll
     $(window).scroll(function() {
         $('.js-pageHeader').toggleClass('scroll', $(this).scrollTop() > 50);
     });
@@ -283,11 +326,27 @@
       });
     }
 
+    // Проверка пароля
+
+    if (registrationForm.length) {
+        $('.js-confirm-password').on('keyup', function () {
+            let password = $(".js-new-password").val();
+            let confirmPassword = $(".js-confirm-password").val();
+
+            if(confirmPassword.length != 0) {
+                if (password != confirmPassword) $(".js-check-password").html("Пароли не совпадают");
+                else $(".js-check-password").html("");
+            } else {
+                $(".js-check-password").html("");
+            }
+        });
+    }
+
     // Подсчет количества постеров
 
     const addToCart = document.querySelectorAll('#js-addToCart');
 
-    if (addToCart) {
+    if (addToCart.length) {
         let plus = document.querySelector('.js-plus');
         let minus = document.querySelector('.js-minus');
         let input = document.querySelector('.js-count');
@@ -300,10 +359,11 @@
         });
 
         minus.addEventListener('click', function(){
-            inputValue --;
-            input.value = inputValue;
-            if(inputValue < 1) {
-                input.value = 1;
+            if(inputValue > 1) {
+                inputValue --;
+                input.value = inputValue;
+            } else {
+              input.value = 1;
             }
             totalPosterCost();
         });
@@ -317,9 +377,5 @@
         let totalCost = parseInt(itemPrice.dataset.productPrice) * input.value;
         itemPrice.innerText = totalCost;
     }
-
-    
-
-   
 
 })();
