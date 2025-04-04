@@ -1,0 +1,62 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    height: 52px;
+
+    &__num {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__span {
+        transition: color .2s;
+
+        @media @bw768 {
+            display: none;
+        }
+    }
+
+    &__icon {
+        display: none;
+        stroke: @black;
+        &--left {
+            transform: scale(-1, 1);
+        }
+
+        @media @bw768 {
+            display: block;
+        }
+    }
+
+    &__prev,
+    &__next {
+        transition: color .2s;
+        cursor: pointer;
+
+        &.jp-disabled {
+            cursor: default;
+            
+            &:hover {
+                color: @black;
+            }
+        }
+
+        &:hover {
+            color: @blue--hover;
+        }
+
+        @media @bw768 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            background-color: @gray;
+            border-radius: 50%;
+        }
+    }
+
+
+}

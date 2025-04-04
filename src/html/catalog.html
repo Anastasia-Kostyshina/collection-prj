@@ -13,15 +13,34 @@
                 "name": "Главная"
               }
             ])
-            <a href="#" class="breadcrumbs__link breadcrumbs__link-current">Каталог</a>
+            <a href="catalog.html" class="breadcrumbs__link breadcrumbs__link-current">Каталог</a>
         </div>
           <div class="catalog">
             <div class="catalog__container">
               <h1 class="catalog__title section-title">Каталог</h1>
 
-              <div id="catalogContainer" class="catalog__list"></div>
+              <div class="catalog__block">
+                <div class="catalog__filter"></div>
 
-              <div class="catalog__pagination pagination js-pagination">
+                <div class="catalog__result">
+                  <div id="js-catalog-container" class="catalog__list"></div>
+
+                  <div class="catalog__pagination pagination">
+                    <div class="pagination__prev">
+                      <svg class="pagination__icon pagination__icon--left" width="4" height="7">
+                        <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                      </svg>
+                      <span class="pagination__span">Назад</span>
+                    </div>
+                    <div class="pagination__num js-pagination-num"></div>
+                    <div class="pagination__next">
+                      <svg class="pagination__icon" width="4" height="7">
+                        <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+                      </svg>
+                      <span class="pagination__span">Вперед</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
