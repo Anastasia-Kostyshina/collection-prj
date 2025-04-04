@@ -4,6 +4,12 @@
     // root - html 
     const root = document.documentElement;
 
+    // Mobile header navigation
+    const navToggle = document.querySelector("#js-navToggle");
+    navToggle.addEventListener("click", function () {
+        root.classList.toggle("show-nav");
+    });
+
     // Modal window for images
     const imagePP = document.querySelector("#js-imagePP");
 

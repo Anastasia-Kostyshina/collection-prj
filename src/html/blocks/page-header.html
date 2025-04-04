@@ -5,7 +5,7 @@
         <svg class="page-header__catalog-icon" width="24" height="24">
           <use xlink:href="assets/icons/symbols.svg#catalog"></use>
         </svg>
-        Каталог
+        <span class="page-header__span">Каталог</span>
       </a>
     </div>
     
@@ -15,30 +15,35 @@
       </svg>
     </a>
 
-    <div class="page-header__menu">
-      <a href="#" class="page-header__menu-btn">
-        <svg class="page-header__menu-icon" width="24" height="24">
+    <nav class="page-header__nav">
+      <a href="catalog.html" class="page-header__nav-btn">
+        <svg class="page-header__nav-icon" width="24" height="24">
             <use
               xlink:href="assets/icons/symbols.svg#heart"
             ></use>
         </svg>
+        <span class="page-header__span--mob">Избранное</span>
       </a>
 
-      <a href="#" class="page-header__menu-btn">
-        <svg class="page-header__menu-icon" width="24" height="24">
+      <a href="#" class="page-header__nav-btn">
+        <svg class="page-header__nav-icon" width="24" height="24">
             <use
               xlink:href="assets/icons/symbols.svg#shopping-cart"
             ></use>
         </svg>
+        <span class="page-header__span--mob">Корзина</span>
       </a>
 
-      <a href="registration.html" class="page-header__menu-btn">
-        <svg class="page-header__menu-icon" width="24" height="24">
+      <a href="registration.html" class="page-header__nav-btn">
+        <svg class="page-header__nav-icon" width="24" height="24">
             <use
               xlink:href="assets/icons/symbols.svg#log-in"
             ></use>
         </svg>
+        <span class="page-header__span--mob">Личный кабинет</span>
       </a>
-    </div>
+    </nav>
+
+    <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
   </div>
 </header>

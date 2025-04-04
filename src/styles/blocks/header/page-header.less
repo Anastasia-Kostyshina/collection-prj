@@ -10,6 +10,10 @@
     z-index: 100;
     background-color: @gray;
 
+    @media @bw1020 {
+        height: 75px;
+    }
+
     &__container {
         .container();
 
@@ -20,23 +24,56 @@
         padding-top: 15px;
         padding-bottom: 10px;
         z-index: 1;
+
+        @media @bw1020 {
+            padding-top: 10px;
+            padding-bottom: 6px;
+        }
     }
 
     &__left-block,
-    &__menu {
+    &__nav {
         width: 192px;
     }
 
     &__left-block {
         display: flex;
+
+        @media @bw1020 {
+            width: 110px;
+            z-index: 1;
+        }
     }
 
-    &__menu {
-        justify-content: flex-end;
+    &__nav {
+        box-sizing: border-box;
+        justify-content: flex-start;
         display: flex;
         align-items: center;
         gap: 30px;
         margin-right: -10px;
+
+        @media @bw1020 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+            margin-right: 0;
+            padding: 140px 30px 30px 25px;
+            background-color: @gray;
+            transition: transform 0.4s;
+            transform: translateX(-100%);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        @media @bw768 {
+            padding: 130px 20px 20px 15px;
+        }
     }
 
     &__catalog {
@@ -58,12 +95,93 @@
         font-size: 0;
         text-decoration: none;
         z-index: 1;
+
+        @media @bw1020 {
+            width: 55px;
+            height: 59px;
+        }
     }
 
-    &__menu-btn {
+    &__logo-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__nav-btn {
         display: flex;
         font-size: 0;
         padding: 10px;
+
+        @media @bw1020 {
+            gap: 15px;
+            padding: 5px;
+        }
+    }
+
+    &__span {
+
+        font-size: 16px;
+        line-height: 20px;
+
+        &--mob {
+            display: none;
+            font-size: 16px;
+            line-height: 22px;
+            align-self: flex-end;
+
+            @media @bw1020 {
+                display: block;
+            }
+
+            @media @bw768 {
+                font-size: 14px;
+            }
+        }
+
+        @media @bw768 {
+            display: none;
+        }
+    }
+
+    &__nav-toggle {
+        display: none;
+                
+        @media @bw1020 {
+          display: block;
+          position: relative;
+          margin-left: 70px;
+          right: -11px;
+          width: 40px;
+          height: 40px;
+          border: none;
+          background: none;
+          cursor: pointer;
+          z-index: 999;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 19px;
+          left: 11px;
+          width: 18px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: @black;
+          transform-origin: 50% 50%;
+          transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        &::before {
+          top: 13px;
+          box-shadow: 0 6px 0 @black;
+        }
+
+        &::after {
+          top: 25px;
+        }
     }
 }
 
