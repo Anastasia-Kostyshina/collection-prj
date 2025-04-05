@@ -383,5 +383,5 @@
         let totalCost = parseInt(itemPrice.dataset.productPrice) * input.value;
         itemPrice.innerText = totalCost;
     }
-
+    
 })();

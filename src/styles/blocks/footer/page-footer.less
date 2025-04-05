@@ -5,6 +5,22 @@
         padding: 19px 0;
         background-color: @red;
         margin: 0 0 60px;
+
+        @media @bw1020 {
+            padding: 13px 0;
+            margin: 0 0 55px;
+        }
+
+        @media @bw768 {
+            padding: 6px 0 5px;
+        }
+    }
+
+    &__logo-icon {
+        @media @bw1020 {
+            width: 55px;
+            height: 59px;
+        }
     }
 
     &__container {
@@ -16,6 +32,10 @@
     &__subtitle {
         margin: 0 0 32px;
         font-weight: 600;
+
+        @media @bw768 {
+            margin: 0 0 24px;
+        }
     }
 
     &__info {
@@ -32,12 +52,36 @@
         column-gap: 139px;
         max-width: 496px;
         width: 100%;
+
+        @media @bw1020 {
+            max-width: 463px;
+            column-gap: 92px;
+        }
+
+        @media @bw768 {
+            flex-direction: column;
+        }
     }
 
     &__nav-list {
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @media @bw1020 {
+            gap: 24px;
+        }
+
+        @media @bw768 {
+            gap: 20px;
+        }
+    }
+
+    &__nav-link {
+        @media @bw768 {
+            font-size: 14px;
+            line-height: 25px;
+        }
     }
 
     &__right-block {

@@ -3,6 +3,14 @@
     justify-content: flex-end;
     gap: 30px;
 
+    @media @bw1020 {
+        gap: 20px;
+    }
+
+    @media @bw768 {
+        flex-direction: column;
+    }
+
     &__link {
         display: flex;
         justify-content: center;
