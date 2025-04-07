@@ -2,13 +2,26 @@
     .container();
 
     position: relative;
+    display: grid;
+    grid-template-columns: 332px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "title articlecover"
+    "text articlecover";
+    column-gap: 42px;
 
     &__article-cover {
-        margin: 0 0 0 40px;
+        margin: 0 0 0 auto;
+        grid-area: articlecover;
     }
 
     &__title {
         margin-bottom: 40px;
+        grid-area: title;
+    }
+
+    &__text-wrap {
+        grid-area: text;
     }
 
     &__text {
@@ -23,11 +36,5 @@
         left: 24.5%;
         max-width: 262px;
         width: 100%;
-    }
-
-    &::after {
-        content: "";
-        display: block;
-        clear: both;
     }
 }

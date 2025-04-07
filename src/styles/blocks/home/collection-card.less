@@ -6,15 +6,43 @@
     column-gap: 82px;
     width: 100%;
 
+    @media @bw1170 {
+        flex-direction: column-reverse;
+        gap: 99px;
+    }
+
+    @media @bw768  {
+        gap: 83px;
+    }
+
     &__info {
         align-self: flex-end;
         display: flex;
         flex-direction: column;
         gap: 15px;
+
+        @media @bw1170 {
+            align-self: flex-start;
+            gap: 26px;
+        }
+
+        @media @bw768 {
+            width: 100%;
+            gap: 18px;
+        }
     }
 
     &__btn {
         min-width: 228px;
+
+        @media @bw1170 {
+            min-width: 272px;
+        }
+
+        @media @bw768 {
+            min-width: unset;
+            width: 100%;
+        }
     }
 
     &__picture {
@@ -32,6 +60,17 @@
           display: block;
           width: 100%;
           padding-top: 79.765%;
+        }
+
+        @media @bw1170 {
+            align-self: flex-end;
+            max-width: 346px;
+            margin-top: 17px;
+        }
+
+        @media @bw768  {
+            max-width: 164px;
+            margin-top: 0px;
         }
     }
   
@@ -58,6 +97,11 @@
             font-weight: 700;
             line-height: 62px;
             letter-spacing: 0.05em;
+
+            @media @bw1170 {
+                font-size: 36px;
+                line-height: 37px;
+            }
         }
     }
 }

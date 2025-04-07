@@ -1,6 +1,15 @@
 <section class="@@class banner">
     <div class="banner__container">
-        <img src="assets/images/banner/banner-bkg.svg" alt="" class="banner__img" />
+        <picture class="banner__picture banner__picture--top">
+            <source media="(max-width: 767px)" srcset="assets/images/banner/banner-bkg_mob.svg" />
+            <img src="assets/images/banner/banner-bkg.svg" alt="" class="banner__img banner__img--top" />
+        </picture>
+
+        <picture class="banner__picture banner__picture--bottom">
+            <source media="(max-width: 767px)" srcset="assets/images/banner/banner-bkg-bottom_mob.svg" />
+            <img src="assets/images/banner/banner-bkg-bottom.svg" alt="" class="banner__img banner__img--bottom" />
+        </picture>
+
         <div class="banner__slider">
             <div class="banner__slide">
                 <!-- prettier-ignore -->

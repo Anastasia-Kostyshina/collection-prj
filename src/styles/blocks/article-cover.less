@@ -1,7 +1,10 @@
 .article-cover {
     max-width: 862px;
     width: 100%;
-    float: right;
+
+    @media @bw1660 {
+        max-width: 776px;
+    }
 
     &__picture {
         display: block;

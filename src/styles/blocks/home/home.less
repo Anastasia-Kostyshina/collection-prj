@@ -1,7 +1,27 @@
 .home {
     padding: 100px 0 150px;
 
+    @media @bw1170 {
+        padding: 70px 0 100px;
+    }
+
+    @media @bw768 {
+        padding: 40px 0 80px;
+    }
+
     &__article-preview {
         margin-bottom: 145px;
+
+        @media @bw1660 {
+            margin-bottom: 115px;
+        }
+
+        @media @bw1170 {
+            margin-bottom: 75px;
+        }
+
+        @media @bw768 {
+            margin-bottom: 60px;
+        }
     }
 }
