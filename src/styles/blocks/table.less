@@ -5,6 +5,27 @@
     border-spacing: 0;
     text-align: center;
 
+    @media @bw768 {
+        display: block;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        margin-left: -20px;
+    }
+
+    &__head {
+        @media @bw768 {
+            display: none;
+        }
+    }
+
+    &__body {
+        @media @bw768 {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+    }
+
     &__th {
         box-sizing: border-box;
         padding: 10px;
@@ -32,11 +53,67 @@
 
     &__tr {
         border-bottom: 1px solid @black;
+
+        @media @bw768 {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-bottom: 0;
+
+            & .table__td:first-child::before {
+                color: @black;
+            }
+    
+            &:nth-child(1) {
+                & .table__td:first-child {
+                    background-color: @yellow;
+                }
+            }
+    
+            &:nth-child(2) {
+                & .table__td:first-child {
+                    background-color: @green;
+                }
+            }
+    
+            &:nth-child(3) {
+                & .table__td:first-child {
+                    background-color: @orange;
+                }
+            }
+    
+            &:nth-child(4) {
+                & .table__td:first-child {
+                    background-color: @blue_light;
+                }
+            }
+        }
     }
     
     &__td {
         box-sizing: border-box;
         padding: 10px;
         height: 80px;
+
+        @media @bw768 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            padding: 5px 20px;
+            height: auto;
+            line-height: 20px;
+        }
+
+        &::before {
+            @media @bw768 {
+                content: attr(data-label);
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 15px;
+                text-transform: capitalize;
+                color: #7A7A7A;
+            }
+        }
     }
 }
