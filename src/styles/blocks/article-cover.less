@@ -37,6 +37,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 15px;
         font-size: 16px;
+        text-align: right;
+
+        @media @bw1170 {
+            font-size: 14px;
+        }
+    }
+
+    &__icon {
+        height: 40px;
+        width: 100px;
+
+        @media @bw1170 {
+            height: 30px;
+            width: 76px;
+        }
     }
 }

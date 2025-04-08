@@ -10,36 +10,91 @@
     "text articlecover";
     column-gap: 42px;
 
-    &__article-cover {
-        margin: 0 0 0 auto;
+    @media @bw1170 {
+        grid-template-columns: 1fr 436px;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+        "title title"
+        "text articlecover"
+        "text articlecover";
+    }
+
+    @media @bw768 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title"
+        "text"
+        "articlecover";
+    }
+
+    &__cover-wrap {
+        position: relative;
         grid-area: articlecover;
+
+        @media @bw768 {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &__article-cover {
+        margin-left: auto;
     }
 
     &__title {
         margin-bottom: 40px;
         grid-area: title;
+
+        @media @bw768 {
+            margin-bottom: 30px;
+        }
     }
 
     &__text-wrap {
         grid-area: text;
+        @media @bw768 {
+            margin-bottom: 40px;
+        }
     }
 
     &__text {
         margin: 0 0 20px;
         max-width: 320px;
         width: 100%;
+
+        @media @bw768 {
+            max-width: 100%;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__btn {
         position: absolute;
         bottom: 34%;
-        left: 24.5%;
+        left: -5.1%;
         max-width: 262px;
         width: 100%;
 
         @media @bw1660 {
-            bottom: 267px;
-            left: 23.8%;
+            bottom: 32.1%;
+            left: unset;
+            right: 707px;
+        }
+
+        @media @bw1170 {
+            max-width: 188px;
+            right: 356px;
+            bottom: 27.6%;
+        }
+
+        @media @bw768 {
+            position: static;
+            max-width: 100%;
         }
     }
 }
