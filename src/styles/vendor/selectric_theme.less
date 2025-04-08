@@ -73,13 +73,13 @@
       margin: 0;
       height: 100%;
       font-size: 16px;
-      line-height: 1.375;
+      line-height: 20px;
       color: @black;
       border-bottom: 1px solid #7a7a7a;
 
-      @media @bw768 {
+      @media @bw1170 {
         font-size: 14px;
-        line-height: 20px;
+        line-height: 17px;
       }
     }
 }
@@ -117,7 +117,14 @@
     & li {
       padding: 15px 20px;
       font-size: 16px;
+      line-height: 20px;
+      align-content: center;
       color: @black;
+
+      @media @bw1170 {
+        font-size: 14px;
+        line-height: 17px;
+      }
 
       &:hover {
         background: #1066D01A;
@@ -132,10 +139,6 @@
       &.selected {
         background: #1066D01A;
         color: @black;
-      }
-      
-      @media @bw400 {
-        font-size: 14px;
       }
     }
 }

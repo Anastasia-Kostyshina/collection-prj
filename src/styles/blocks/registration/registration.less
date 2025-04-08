@@ -21,8 +21,16 @@
     }
 
     &__caption {
-        margin-bottom: 48px;
+        margin-bottom: 57px;
         text-align: center;
+
+        @media @bw1660 {
+            margin-bottom: 60px;
+        }
+
+        @media @bw1170 {
+            margin-bottom: 57px;
+        }
 
         @media @bw768 {
             display: flex;

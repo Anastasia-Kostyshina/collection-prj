@@ -6,12 +6,16 @@
     align-items: flex-start;
     min-height: 24px;
     padding-top: 0px;
-    padding-left: 35px;
+    padding-left: 40px;
     color: @black;
     cursor: pointer;
 
+    @media @bw1170 {
+      padding-left: 39px;
+    }
+
     @media @bw768 {
-      padding-left: 28px;
+      padding-left: 31px;
     }
 
     &__input {
@@ -58,9 +62,9 @@
         font-size: 16px;
         line-height: 20px;
 
-        @media @bw768 {
+        @media @bw1170 {
           font-size: 14px;
-          line-height: 19px;
+          line-height: 17px;
         }
     }
 
