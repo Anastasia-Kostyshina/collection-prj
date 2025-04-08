@@ -5,12 +5,12 @@
     gap: 14px;
     padding-top: 20px;
 
-    @media @bw1340 {
-        gap: 15px;
+    @media @bw1170 {
+        padding-top: 15px;
     }
 
     @media @bw768 {
-        display: none;
+        padding-top: 10px;
     }
 
     &__link {
@@ -38,6 +38,10 @@
             font-size: 14px;
             line-height: 19px;
         }
+
+        @media @bw1170 {
+            display: none;
+        }
     }
 
     &__link-current {
@@ -48,5 +52,22 @@
             content: "";
             display: none;
         }
+    }
+
+    &__link--mob {
+        display: none;
+        padding: 10px;
+        margin-left: -10px;
+        font-size: 0;
+        line-height: 0;
+
+        @media @bw1170 {
+            display: block;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
     }
 }
