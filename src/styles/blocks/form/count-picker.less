@@ -4,6 +4,15 @@
     align-items: center;
     gap: 45px;
 
+    @media @bw1170 {
+        gap: 49px;
+    }
+
+    @media @bw400 {
+        justify-content: space-between;
+        gap: 15px;
+    }
+
     &__box {
         display: flex;
         flex-direction: row;
@@ -21,6 +30,11 @@
         text-align: center;
         font-size: 18px;
         line-height: 25px;
+
+        @media @bw1170 {
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
 
     &__plus,

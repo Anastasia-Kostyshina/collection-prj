@@ -1,18 +1,45 @@
 .poster-form {
     margin-bottom: 30px;
 
+    @media @bw1170 {
+        margin-bottom: 24px;
+    }
+
     &__price {
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         font-size: 40px;
+        line-height: 25px;
         font-weight: 600;
+
+        @media @bw1170 {
+            font-size: 34px;
+            margin-bottom: 40px;
+        }
+
+        @media @bw768 {
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
     }
 
     &__radio {
         margin-bottom: 20px;
+
+        @media @bw1170 {
+            margin-bottom: 25px;
+        }
     }
 
     &__count-picker {
         margin-bottom: 50px;
+
+        @media @bw1170 {
+            margin-bottom: 40px;
+        }
+
+        @media @bw768 {
+            margin-bottom: 24px;
+        }
     }
 
     &__form-footer {
@@ -24,10 +51,20 @@
     &__btn {
         position: relative;
         right: unset;
+
+        @media @bw1020 {
+            position: absolute;
+            right: -10px;
+            top: -10px;
+        }
     }
 
     &__submit {
         max-width: 263px;
         width: 100%;
+
+        @media @bw1170 {
+            max-width: 100%;
+        }
     }
 }

@@ -2,6 +2,16 @@
     padding-top: 55px;
     padding-bottom: 150px;
 
+    @media @bw1170 {
+        padding-top: 31px;
+        padding-bottom: 120px;
+    }
+
+    @media @bw768 {
+        padding-top: 26px;
+        padding-bottom: 36px;
+    }
+
     &__container {
         .container();
     }
@@ -26,12 +36,17 @@
             margin-bottom: 0;
         }
 
-        @media @bw768 {
-        font-size: 30px;
+        @media @bw1170 {
+            margin-bottom: 1em;
+            font-size: 30px;
         }
     }
 
     &__poster-info {
         margin-bottom: 60px;
+    }
+
+    &__slider {
+        margin-top: 40px;
     }
 }

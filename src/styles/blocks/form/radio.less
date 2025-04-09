@@ -2,10 +2,11 @@
     display: flex;
     align-items: flex-start;
     flex-direction: row;
-    gap: 50px;
+    column-gap: 50px;
+    row-gap: 21px;
 
     @media @bw768 {
-      margin-bottom: 24px;
+      flex-direction: column;
     }
     
     &__item {
@@ -49,9 +50,9 @@
         font-size: 18px;
         line-height: 25px;
 
-        @media @bw768 {
-          font-size: 14px;
-          line-height: 19px;
+        @media @bw1170 {
+          font-size: 16px;
+          line-height: 22px;
         }
     }
 }

@@ -105,12 +105,15 @@
     .swiper-slide {
         box-sizing: border-box;
         width: calc(25%);
-        min-width: 315px;
-        @media @bw1340 {
-          width: calc(50%);
+        aspect-ratio: 1 / 1;
+
+        @media @bw1170 {
+            width: calc(50%);
         }
-        @media @bw768 {
-          width: calc(100%);
+
+        @media @bw600 {
+            width: calc(100%);
+            aspect-ratio: 1 / 1;
         }
     }
 
@@ -118,5 +121,10 @@
         display: flex;
         gap: 24px;
         align-self: flex-end;
+
+        @media @bw600 {
+            align-self: center;
+            gap: 59px;
+        }
     }
 }
