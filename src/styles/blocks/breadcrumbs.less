@@ -2,7 +2,7 @@
     .container();
 
     display: flex;
-    gap: 14px;
+    gap: 12px;
     padding-top: 20px;
 
     @media @bw1170 {
@@ -21,16 +21,19 @@
         text-decoration: none;
         color: #7A7A7A;
 
-        &::after {
+        &::before {
             content: "/";
             display: block;
             position: absolute;
             top: 0;
-            right: -10px;
-            color: @black;
+            left: -8px;
+            color: #7A7A7A;
+        }
 
-            @media @bw1340 {
-                right: -10px;
+        &:first-child {
+            &::before {
+                content: "";
+                display: none;
             }
         }
 
@@ -48,9 +51,8 @@
         color: @black;
         cursor: default;
         pointer-events: none;
-        &::after {
-            content: "";
-            display: none;
+        &::before {
+            color: @black;
         }
     }
 

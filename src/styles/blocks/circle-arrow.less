@@ -9,6 +9,7 @@
     width: 54px;
     height: 54px;
     stroke: @black;
+    color: @black;
     background-color: @gray;
     border-radius: 50%;
     transition: .2s;
@@ -25,4 +26,9 @@
     &.arrow--disabled {
         stroke: #1111114D;
     }
+}
+
+.arrow--disabled {
+    opacity: .3;
+    pointer-events: none;
 }
