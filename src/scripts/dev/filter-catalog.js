@@ -1,7 +1,9 @@
 (function () {
   "use strict";
 
-  const catalog = [
+  let list = document.querySelector(".catalog__list");
+
+  let catalog = [
     {
         name: 'Poster 01',
         url: '../assets/images/catalog/poster1',
@@ -1192,9 +1194,16 @@
     },
 ];
 
-const catalogHTML = catalog.map(
-  (item) => `<article class="catalog__card product-card">
-                <picture class="product-card__picture">
+
+let productFilter = catalog;
+showProduct(productFilter);
+function showProduct(productFilter){
+    list.innerHTML = '';
+    productFilter.forEach(item => {
+        let newItem = document.createElement('article');
+        newItem.classList.add('catalog__item');
+
+        let templateContent = `<div class="catalog__card product-card"><picture class="product-card__picture">
                     <source type="image/webp" srcset="${item.url}.webp" />
                     <img src="${item.url}.jpg" alt="${item.name}" class="product-card__img" />
                 </picture>
@@ -1202,6 +1211,8 @@ const catalogHTML = catalog.map(
                     <div class="product-card__price">${item.price} ₽</div>
                     <div class="product-card__description">Постер | <span class="product-card__size">${item.size}</span></div>
                 </div>
+
+                <a href="detail.html" class="product-card__link"></a>
 
                 <button type="button" class="btn-svg btn-svg__favorite js-addToFavorite">
                     <svg width="24" height="24">
@@ -1213,12 +1224,14 @@ const catalogHTML = catalog.map(
                     <svg width="24" height="24">
                         <use xlink:href="assets/icons/symbols.svg#shopping-cart"></use>
                     </svg>
-                </button>
-            </article>`
-);
+                </button></div>`;
 
-const result = document.querySelector(".catalog__list");
-result.innerHTML = catalogHTML.join("");
+        newItem.innerHTML = (templateContent);
+
+        list.appendChild(newItem);
+    });
+}
+
 
 /* when document is ready */
 $(function() {

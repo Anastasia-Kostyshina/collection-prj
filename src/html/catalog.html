@@ -25,7 +25,106 @@
               <h1 class="catalog__title section-title">Каталог</h1>
 
               <div class="catalog__block">
-                <div class="catalog__filter"></div>
+                <aside class="catalog__filter filter">
+                  <form class="filter__form">
+                    <div class="filter__list">
+                      <div class="field filter__field">
+                        <h6 class="field__title">Дата проведения:</h6>
+
+                        <div class="field__checks-list">
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="year" value="1982">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              1982 года
+                            </span>
+                          </label>
+  
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="year" value="1986">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              1986 года
+                            </span>
+                          </label>
+  
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="year" value="1987">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              1987 года
+                            </span>
+                          </label>
+  
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="year" value="1988">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              1988 года
+                            </span>
+                          </label>
+  
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="year" value="1989">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              1989 года
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="field filter__field">
+                        <h6 class="field__title">Коллекция</h6>
+
+                        <div class="radio filter__radio">
+                          <label class="radio__item">
+                            <input class="radio__input" type="radio" name="available" value="true">
+                            <span class="radio__mark"></span>
+                            <span class="radio__label">В наличии</span>
+                          </label>
+          
+                          <label class="radio__item">
+                            <input class="radio__input" type="radio" name="available" value="false">
+                            <span class="radio__mark"></span>
+                            <span class="radio__label">Под заказ</span>
+                          </label>
+
+                          <label class="radio__item">
+                            <input class="radio__input" type="radio" name="available" value="" checked="">
+                            <span class="radio__mark"></span>
+                            <span class="radio__label">Всё</span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="field filter__field">
+                        <h6 class="field__title">Ориентация</h6>
+
+                        <div class="field__checks-list">
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="orientation" value="book">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              Книжная
+                            </span>
+                          </label>
+  
+                          <label class="check filter__check">
+                            <input type="checkbox" class="check__input" name="orientation" value="landscape">
+                            <span class="check__mark"></span>
+                            <span class="check__label">
+                              Альбомная
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn filter__submit">Применить</button>
+                    <button class="btn--reset filter__reset" type="reset">Сбросить</button>
+                  </form>
+                </aside>
 
                 <div class="catalog__result">
                   <div id="js-catalog-container" class="catalog__list"></div>

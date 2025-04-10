@@ -24,9 +24,17 @@
 
     &__radio {
         margin-bottom: 20px;
+        align-items: flex-start;
+        flex-direction: row;
+        column-gap: 50px;
+        row-gap: 21px;
 
         @media @bw1170 {
             margin-bottom: 25px;
+        }
+
+        @media @bw768 {
+            flex-direction: column;
         }
     }
 
