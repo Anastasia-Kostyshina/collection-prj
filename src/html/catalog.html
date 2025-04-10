@@ -119,6 +119,26 @@
                           </label>
                         </div>
                       </div>
+
+                      <div class="field filter__field">
+                        <h6 class="field__title">Цена, ₽</h6>
+
+                        <div class="field__price-slider price-slider">
+                          <div class="price-slider__range" id="js-rangeSlider"></div>
+
+                          <div class="price-slider__inputs">
+                            <label class="price-slider__label">
+                              <span class="price-slider__text">от</span>
+                              <input type="number" min="0" max="6000" placeholder="650" class="price-slider__input" id="input-0">
+                            </label>
+
+                            <label class="price-slider__label">
+                              <span class="price-slider__text">до</span>
+                              <input type="number" min="0" max="6000" placeholder="5000" class="price-slider__input" id="input-1">
+                            </label>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     <button class="btn filter__submit">Применить</button>
@@ -153,6 +173,7 @@
         @@include('blocks/page-footer.html')
 
         <script src="scripts/jquery-3.7.1.min.js"></script>
+        <script src="scripts/nouislider.min.js"></script>
         <script src="scripts/jPages.js"></script>
         <script src="scripts/filter-catalog.min.js"></script>
         <script src="scripts/main.min.js"></script>

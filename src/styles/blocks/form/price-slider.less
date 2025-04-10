@@ -1,0 +1,44 @@
+.price-slider {
+    & input::-webkit-outer-spin-button,
+    & input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    & input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+
+    &__label {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    &__input {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        width: 41px;
+
+        &::placeholder {
+            color: @black;
+        }
+    }
+
+    &__range {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+        height: 1px;
+        background: rgb(17 17 17 / 50%);
+    }
+}

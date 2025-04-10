@@ -1247,6 +1247,12 @@ filter.addEventListener('submit', function(event){
     // Собираем все чекбоксы с name="available", которые отмечены
     let checkedAvailability = document.querySelector('input[name="available"]:checked')?.value;
 
+    // Минимальная и максимальная цена
+    let minPrice = document.querySelector('#input-0').value;
+
+    let maxPrice = document.querySelector('#input-1').value;
+
+
     // Фильтруем товары по выбранным годам
     productFilter = catalog.filter(item => {
         let matchYear = checkedYears.length === 0 || checkedYears.includes(item.year);
@@ -1255,7 +1261,9 @@ filter.addEventListener('submit', function(event){
 
         let matchAvailability = checkedAvailability === '' || String(item.available) === checkedAvailability;
 
-        return matchYear && matchOrientation && matchAvailability;
+        let matchPrice = item.price >= minPrice && item.price <= maxPrice;
+
+        return matchYear && matchOrientation && matchAvailability && matchPrice;
     });
     showProduct(productFilter);
     initiatePagination();
@@ -1268,7 +1276,7 @@ filter.addEventListener('reset', function(event){
 })
 
 
-/* Инициируем пагинацию */
+// Иниция пагинации с учетом изменения размера экрана
 
 function destroyPagination() {
     // Удаляем jPages
