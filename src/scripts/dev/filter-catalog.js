@@ -1244,13 +1244,18 @@ filter.addEventListener('submit', function(event){
     let checkedOrientation = Array.from(document.querySelectorAll('input[name="orientation"]:checked'))
                             .map(input => input.value);
 
+    // Собираем все чекбоксы с name="available", которые отмечены
+    let checkedAvailability = document.querySelector('input[name="available"]:checked')?.value;
+
     // Фильтруем товары по выбранным годам
     productFilter = catalog.filter(item => {
         let matchYear = checkedYears.length === 0 || checkedYears.includes(item.year);
 
         let matchOrientation = checkedOrientation.length === 0 || checkedOrientation.includes(item.orientation);
 
-        return matchYear && matchOrientation;
+        let matchAvailability = checkedAvailability === '' || String(item.available) === checkedAvailability;
+
+        return matchYear && matchOrientation && matchAvailability;
     });
     showProduct(productFilter);
     initiatePagination();
@@ -1263,13 +1268,18 @@ filter.addEventListener('reset', function(event){
 })
 
 
-/* when document is ready */
+/* Инициируем пагинацию */
 
-function initiatePagination() {
+function destroyPagination() {
+    // Удаляем jPages
+    $(".js-pagination-num").jPages("destroy");
+}
+
+function initiatePagination(midRangeValue) {
     $(".js-pagination-num").jPages({
         containerID: "js-catalog-container",
         perPage: 12,
-        midRange: 6,
+        midRange: midRangeValue,
         minHeight: false,
         first: false,
         previous: ".pagination__prev",
@@ -1277,6 +1287,30 @@ function initiatePagination() {
         last: false
     });
 }
+
+// Текущий режим пагинации
+let currentPaginationSetting = null;
+
+function checkAndApplyPagination() {
+    let isMobile = window.innerWidth < 600;
+    let newSetting = isMobile ? 3 : 6;
+
+    if (currentPaginationSetting !== newSetting) {
+        destroyPagination();
+        initiatePagination(newSetting);
+        currentPaginationSetting = newSetting;
+    }
+}
+
+// При загрузке страницы
+document.addEventListener("DOMContentLoaded", function () {
+    checkAndApplyPagination();
+});
+
+// При изменении размера окна
+window.addEventListener("resize", function () {
+    checkAndApplyPagination();
+});
 
 
 })();
