@@ -4,10 +4,19 @@
     gap: 50px;
     height: 52px;
 
+    @media @bw768 {
+        justify-content: center;
+        gap: 29px;
+    }
+
     &__num {
         display: flex;
         align-items: center;
         gap: 30px;
+
+        @media @bw768 {
+            gap: 24px;
+        }
     }
 
     &__span {
@@ -45,6 +54,10 @@
 
         &:hover {
             color: @blue--hover;
+
+            @media @bw768 {
+                color: @black;
+            }
         }
 
         @media @bw768 {

@@ -25,13 +25,14 @@
               <h1 class="catalog__title section-title">Каталог</h1>
 
               <div class="catalog__block">
-                <aside class="catalog__filter filter">
-                  <form class="filter__form js-filter-form">
+                <aside id="js-filter" class="catalog__filter filter">
+                  <h2 class="filter__title section-title">Фильтр</h2>
+                  <form id="filter-form" class="filter__form js-filter-form">
                     <div class="filter__list">
                       <div class="field filter__field">
                         <h6 class="field__title">Дата проведения:</h6>
 
-                        <div class="field__checks-list">
+                        <div class="field__checks-list field__checks-list--columns">
                           <label class="check filter__check">
                             <input type="checkbox" class="check__input" name="year" value="1982">
                             <span class="check__mark"></span>
@@ -120,7 +121,7 @@
                         </div>
                       </div>
 
-                      <div class="field filter__field">
+                      <div class="field filter__field field--width">
                         <h6 class="field__title">Цена, ₽</h6>
 
                         <div class="field__price-slider price-slider">
@@ -141,9 +142,10 @@
                       </div>
                     </div>
 
-                    <button class="btn filter__submit">Применить</button>
-                    <button class="btn--reset filter__reset" type="reset">Сбросить</button>
+                    <button id="js-filter-submit" class="btn filter__submit">Применить</button>
                   </form>
+                  <button type="button" class="btn filter__btn-toggle" id="js-filterToggle"></button>
+                  <button class="btn--reset filter__reset" form="filter-form" type="reset">Сбросить</button>
                 </aside>
 
                 <div class="catalog__result">

@@ -1,6 +1,17 @@
 .catalog {
     padding-top: 55px;
     padding-bottom: 150px;
+
+    @media @bw1170 {
+        padding-top: 31px;
+        padding-bottom: 120px;
+    }
+
+    @media @bw768 {
+        padding-top: 33px;
+        padding-bottom: 80px;
+    }
+
     &__container {
         .container();
     }
@@ -41,6 +52,15 @@
 
     &__title {
         margin-bottom: 60px;
+
+        @media @bw1170 {
+            margin-bottom: 40px;
+        }
+
+        @media @bw768 {
+            margin-bottom: 33px;
+            text-align: left;
+        }
     }
 
     &__block {
@@ -56,5 +76,10 @@
 
     &__pagination {
         margin-top: 60px;
+
+        @media @bw768 {
+            justify-content: center;
+            margin-top: 40px;
+        }
     }
 }

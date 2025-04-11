@@ -3,6 +3,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    &--width {
+        max-width: 354px;
+
+        @media @bw768 {
+            max-width: 100%;
+        }
+    }
                 
     &__input,
     &__textarea {
@@ -175,5 +183,24 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
+
+        @media @bw1170 {
+            gap: 21px 59px;
+            flex-direction: unset;
+            flex-wrap: wrap;
+            max-width: 470px;
+            width: 100%;
+        }
+
+        @media @bw768 {
+            gap: 14px 42px;
+            max-width: 275px;
+        }
+
+        &--columns {
+            @media @bw768 {
+                justify-content: space-between;
+            }
+        }
     }
 }

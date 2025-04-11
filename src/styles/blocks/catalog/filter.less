@@ -1,23 +1,60 @@
 .filter {
+    display: flex;
+    flex-direction: column;
+
     &__list {
         display: flex;
         flex-direction: column;
         gap: 60px;
         margin-bottom: 40px;
+
+        @media @bw1170 {
+            gap: 40px;
+        }
+
+        @media @bw768 {
+            gap: 30px;
+        }
     }
 
     &__field {
         gap: 19px;
+
+        @media @bw1170 {
+            gap: 4px;
+        }
     }
 
     &__radio {
         flex-direction: column;
         gap: 15px;
+
+        @media @bw1170 {
+            gap: 21px 48px;
+            flex-direction: unset;
+            flex-wrap: wrap;
+        }
+
+        @media @bw768 {
+            gap: 14px 42px;
+            max-width: 280px;
+        }
+    }
+
+    &__check {
+        @media @bw1170 {
+            padding-left: 31px;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
+        grid-area: filter;
+
+        @media @bw1170 {
+            display: none;
+        }
     }
 
     &__submit {
@@ -27,5 +64,40 @@
     &__reset {
         align-self: flex-start;
         text-align: left;
+        grid-area: reset;
+        transition: none;
+
+        @media @bw1170 {
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media @bw768 {
+            margin-top: 14px;
+            margin-bottom: 33px;
+            
+        }
+    }
+
+    &__btn-toggle {
+        display: none;
+        transition: none;
+
+        &:hover {
+            transition: background-color .2s;
+        }
+
+        &::before {
+            content: "Фильтр";
+        }
+
+        @media @bw1170 {
+            display: block;
+        }
+    }
+
+    &__title  {
+        display: none;
+        grid-area: title;
     }
 }
