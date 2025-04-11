@@ -348,10 +348,30 @@
         });
     }
 
-    // Подсчет количества постеров
+    // Детальная страница постера
 
     const addToCart = document.querySelectorAll('#js-addToCart');
 
+    // Выбор постера по radio
+
+    if (addToCart.length) {
+      let itemPrice = document.querySelector('.js-price');
+      let paperPrice = document.querySelector('#js-paperPoster');
+      let electronicPrice = document.querySelector('#js-electronicPoster');
+
+      paperPrice.addEventListener('click', function(){
+          itemPrice.innerText = paperPrice.dataset.typePrice;
+          itemPrice.dataset.productPrice = paperPrice.dataset.typePrice;
+      });
+
+      electronicPrice.addEventListener('click', function(){
+          itemPrice.innerText = electronicPrice.dataset.typePrice;
+          itemPrice.dataset.productPrice = electronicPrice.dataset.typePrice;
+      });
+
+    }
+
+    // Подсчет количества постеров
     if (addToCart.length) {
         let plus = document.querySelector('.js-plus');
         let minus = document.querySelector('.js-minus');
