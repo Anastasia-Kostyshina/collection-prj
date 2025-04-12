@@ -40,9 +40,27 @@
 
     & .selectric-items {
       display: block;
-      margin-top: 0px;
-      width: 100% !important;
+      width: calc(100% + 40px) !important;
       max-height: 209px;
+      margin-left: -20px;
+
+      @media @bw768 {
+        width: calc(100% + 20px) !important;
+        margin-left: -10px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        border-bottom: 1px solid #7a7a7a;
+
+        @media @bw768  {
+          top: 75px;
+        }
+      }
     }
 }
 
@@ -81,11 +99,18 @@
 }
 
 .selectric-items {
+    padding-top: 81px;
+    margin-top: -81px;
     border-radius: 0px;
     border: none;
     background-color: @gray;
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.15);
     overflow: hidden;
+
+    @media @bw768 {
+      padding-top: 76px;
+      margin-top: -76px;
+    }
 
     & .selectric-scroll {
       overflow-x: hidden;
@@ -116,6 +141,10 @@
       @media @bw1170 {
         font-size: 14px;
         line-height: 17px;
+      }
+
+      @media @bw768 {
+        padding: 15px 10px;
       }
 
       &:hover {

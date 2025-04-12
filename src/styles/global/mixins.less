@@ -173,6 +173,30 @@
   }
 }
 
+.show-counter {
+  display: block;
+}
+
+.in-cart {
+  &.btn-svg {
+    color: #1066d0;
+    fill: #1066d0;
+  }
+
+  &.btn {
+    &::before {
+      content: "Убрать из корзины";
+    }
+  }
+}
+
+.in-favorite {
+  &.btn-svg {
+    color: #1066d0;
+    fill: #1066d0;
+  }
+}
+
 .pointer-events {
   pointer-events: none;
 }

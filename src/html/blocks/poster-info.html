@@ -13,7 +13,7 @@
     <h3 class="poster-info__title">Постер @@title <span class="poster-info__header-span">@@size см</span></h3>
 
     <div class="poster-info__description">
-        <form class="poster-info__form poster-form" id="js-addToCart">
+        <form class="poster-info__form poster-form" id="js-addToCartForm">
             <div class="poster-form__price"><span class="js-price" data-product-price="1850">1850</span> ₽</div>
 
             <div class="radio poster-form__radio">
@@ -40,7 +40,7 @@
             </div>
 
             <div class="poster-form__form-footer">
-                <button type="submit" class="poster-form__submit btn">Добавить в корзину</button>
+                <button type="button" class="poster-form__submit btn js-addToCart"></button>
 
                 <button type="button" class="poster-form__btn btn-svg js-addToFavorite">
                     <svg width="24" height="24">

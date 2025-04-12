@@ -365,11 +365,11 @@
 
     // Детальная страница постера
 
-    const addToCart = document.querySelectorAll('#js-addToCart');
+    const addToCartForm = document.querySelectorAll('#js-addToCartForm');
 
     // Выбор постера по radio
 
-    if (addToCart.length) {
+    if (addToCartForm.length) {
       let itemPrice = document.querySelector('.js-price');
       let paperPrice = document.querySelector('#js-paperPoster');
       let electronicPrice = document.querySelector('#js-electronicPoster');
@@ -387,7 +387,7 @@
     }
 
     // Подсчет количества постеров
-    if (addToCart.length) {
+    if (addToCartForm.length) {
         let plus = document.querySelector('.js-plus');
         let minus = document.querySelector('.js-minus');
         let input = document.querySelector('.js-count');
@@ -454,6 +454,76 @@
         el.addEventListener('change', (e) => {
           console.log(index);
           setRangeSlider(index, e.currentTarget.value);
+        });
+      });
+    }
+
+    // Добавление в корзину
+    const addToCart = document.querySelector('.js-addToCart');
+
+    if (addToCart) {
+      let count = 0;
+      const counter = document.getElementById('js-cartCounter');
+      const buttons = document.querySelectorAll('.js-addToCart');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          // проверяем, добавлен ли товар
+          const isInCart = button.classList.contains('in-cart');
+          
+          if (isInCart) {
+            // Удаляем товар из корзины
+            button.classList.remove('in-cart');
+            count = Math.max(0, count - 1);
+          } else {
+            // Добавляем товар в корзину
+            button.classList.add('in-cart');
+            count++;
+          }
+
+          counter.innerText = count;
+
+          // Управление видимостью счетчика
+          if (count > 0) {
+            counter.classList.add('show-counter');
+          } else {
+            counter.classList.remove('show-counter');
+          }
+        });
+      });
+    }
+
+    // Добавление в избранное
+    const addToFavorite = document.querySelector('.js-addToFavorite');
+
+    if (addToFavorite) {
+      let count = 0;
+      const counter = document.getElementById('js-favoriteCounter');
+      const buttons = document.querySelectorAll('.js-addToFavorite');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          // проверяем, добавлен ли товар
+          const isInCart = button.classList.contains('in-favorite');
+          
+          if (isInCart) {
+            // Удаляем товар из корзины
+            button.classList.remove('in-favorite');
+            count = Math.max(0, count - 1);
+          } else {
+            // Добавляем товар в корзину
+            button.classList.add('in-favorite');
+            count++;
+          }
+
+          counter.innerText = count;
+
+          // Управление видимостью счетчика
+          if (count > 0) {
+            counter.classList.add('show-counter');
+          } else {
+            counter.classList.remove('show-counter');
+          }
         });
       });
     }

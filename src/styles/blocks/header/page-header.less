@@ -108,6 +108,7 @@
     }
 
     &__nav-btn {
+        position: relative;
         display: flex;
         font-size: 0;
         padding: 10px;
@@ -193,6 +194,23 @@
     &__nav-icon {
         &--exit {
             display: none;
+        }
+    }
+
+    &__count {
+        display: none;
+        position: absolute;
+        top: -7px;
+        right: 0;
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 600;
+        color: @black;
+
+        @media @bw1020 {
+            right: unset;
+            left: 29px;
+            top: -10px;
         }
     }
 }
