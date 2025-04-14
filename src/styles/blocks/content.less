@@ -178,4 +178,126 @@
     ol + h6 {
         margin-top: 2em;
     }
+
+    a {
+      font-weight: 600;
+      color: @black;
+      text-decoration: underline;
+      transition: color 0.2s;
+      cursor: pointer;
+      &:hover {
+        color: @blue;
+      }
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    blockquote {
+      position: relative;
+      margin: 27px 0 30px;
+      padding: 8px 0 8px 20px;
+      font-style: normal;
+      font-weight: 600;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: @blue;
+      }
+    }
+
+    img,
+    iframe,
+    figure {
+      display: block;
+      max-width: 872px;
+
+      @media @bw768 {
+        max-width: 323px;
+      }
+    }
+
+    & > img,
+    & > iframe,
+    & > figure {
+      margin: 60px 0 28px;
+
+      @media @bw1170 {
+        margin: 40px 0 29px;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    iframe {
+      border: none;
+      outline: none;
+    }
+
+    figure {
+      img {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+
+    figcaption {
+      margin: 14px 0;
+      font-weight: 300;
+      font-size: 16px;
+      text-align: left;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media @bw1170 {
+        margin: 15px 0;
+        font-size: 14px;
+      }
+    }
+
+    img {
+      &[align],
+      &.alignright {
+        margin: 5px 0;
+        & + figcaption {
+          display: none;
+        }
+      }
+      &[align="right"],
+      &.alignright {
+        margin-left: 10px;
+      }
+      &.alignright {
+        float: right;
+      }
+      &[align="left"],
+      &.alignleft {
+        margin-right: 10px;
+      }
+      &.alignleft {
+        float: left;
+      }
+    }
 }
