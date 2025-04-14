@@ -148,8 +148,10 @@
       }
 
       &:hover {
-        background: #1066D01A;
-        color: @blue;
+        @media (hover: hover) {
+          background: #1066D01A;
+          color: @blue;
+        }
       }
 
       &.highlighted {

@@ -11,8 +11,10 @@
     fill: none;
 
     &:hover {
-        color: @blue--hover;
-        fill: @blue--hover;
+        @media (hover: hover) {
+            color: @blue--hover;
+            fill: @blue--hover;
+        }
     }
 
     &__favorite {

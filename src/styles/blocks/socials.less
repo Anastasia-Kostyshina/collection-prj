@@ -31,7 +31,9 @@
             background-color: @blue_light;
 
             &:hover {
-                background-color: @blue_light--hover;
+                @media (hover: hover) {
+                    background-color: @blue_light--hover;
+                }
             }
         }
 
@@ -39,7 +41,9 @@
             background-color: @green;
 
             &:hover {
-                background-color: @green--hover;
+                @media (hover: hover) {
+                    background-color: @green--hover;
+                }
             }
         }
 
@@ -47,7 +51,9 @@
             background-color: @blue;
 
             &:hover {
-                background-color: @blue--hover;
+                @media (hover: hover) {
+                    background-color: @blue--hover;
+                }
             }
         }
     }
