@@ -527,5 +527,34 @@
         });
       });
     }
+
+    // Modal window for images
+    const selectField = document.querySelector("#js-selectField");
+
+    if(selectField) {
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.selectric-wrapper').forEach(wrapper => {
+            const selectField = wrapper.closest('.js-select-field');
+            
+            if (!selectField) return;
+        
+            // Создаём наблюдатель за изменением классов
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.attributeName === 'class') {
+                        if (wrapper.classList.contains('selectric-open')) {
+                            selectField.classList.add('select-field--open');
+                        } else {
+                            selectField.classList.remove('select-field--open');
+                        }
+                    }
+                });
+            });
+        
+            // Запускаем наблюдение
+            observer.observe(wrapper, { attributes: true });
+        });
+      });
+    }
     
 })();

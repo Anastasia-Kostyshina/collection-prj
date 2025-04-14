@@ -42,11 +42,15 @@
       display: block;
       width: calc(100% + 40px) !important;
       max-height: 209px;
-      margin-left: -20px;
+      margin-left: -9px;
+
+      @media @bw1170 {
+        width: calc(100% + 30px) !important;
+      }
 
       @media @bw768 {
         width: calc(100% + 20px) !important;
-        margin-left: -10px;
+        margin-left: -9px;
       }
 
       &::before {
