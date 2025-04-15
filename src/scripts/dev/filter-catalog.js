@@ -1,7 +1,7 @@
 (function () {
     "use strict";
   
-    let list = document.querySelector(".catalog__list");
+    let list = document.getElementById("js-catalog-container");
     let filter = document.querySelector('.js-filter-form');
   
     let catalog = [

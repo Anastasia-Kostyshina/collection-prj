@@ -495,6 +495,7 @@
       });
     });
     }
+    window.initCartButtons = initCartButtons;
     initCartButtons();
   }
 
@@ -509,15 +510,15 @@
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
-        // проверяем, добавлен ли товар
+        // проверяем, добавлен ли товар в избранное
         const isInCart = button.classList.contains('in-favorite');
         
         if (isInCart) {
-          // Удаляем товар из корзины
+          // Удаляем товар из избранного
           button.classList.remove('in-favorite');
           count = Math.max(0, count - 1);
         } else {
-          // Добавляем товар в корзину
+          // Добавляем товар в избранное
           button.classList.add('in-favorite');
           count++;
         }
