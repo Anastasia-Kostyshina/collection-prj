@@ -10,9 +10,16 @@
     </div>
     
     <a href="index.html" class="page-header__logo">
-      <svg class="page-header__logo-icon" width="74" height="80">
-        <use xlink:href="assets/icons/symbols.svg#logo"></use>
-      </svg>
+      <picture class="page-header__logo-picture">
+        <source
+        media="(max-width: 767px)"
+        type="image/webp"
+        srcset="assets/images/logo_mob.webp"
+        />
+        <source media="(max-width: 767px)" srcset="assets/images/logo_mob.png" />
+        <source type="image/webp" srcset="assets/images/logo.webp" />
+        <img src="assets/images/logo.png" alt="logo" class="page-header__logo-img" />
+      </picture>
     </a>
 
     <nav class="page-header__nav">
@@ -23,7 +30,7 @@
             ></use>
         </svg>
         <span class="page-header__span--mob">Избранное</span>
-        <span id="js-favoriteCounter" class="page-header__count">0</span>
+        <span id="js-favoriteCounter" class="page-header__count">1</span>
       </a>
 
       <a href="#" id="cart-link" class="page-header__nav-btn">
@@ -33,7 +40,7 @@
             ></use>
         </svg>
         <span class="page-header__span--mob">Корзина</span>
-        <span id="js-cartCounter" class="page-header__count">0</span>
+        <span id="js-cartCounter" class="page-header__count">1</span>
       </a>
 
       <a href="registration.html" class="page-header__nav-btn">

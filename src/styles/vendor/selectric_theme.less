@@ -150,18 +150,21 @@
       &:hover {
         @media (hover: hover) {
           background: #1066D01A;
-          color: @blue;
+          color: @black;
         }
       }
 
       &.highlighted {
         background: #1066D01A;
-        color: @black;
+        color: @blue;
       }
 
       &.selected {
         background: #1066D01A;
-        color: @black;
+        color: @blue;
+        @media (hover: hover) {
+          color: @blue;
+        }
       }
     }
 }
