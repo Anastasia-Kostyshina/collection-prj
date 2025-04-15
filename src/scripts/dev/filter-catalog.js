@@ -1199,8 +1199,6 @@
   let productFilter = catalog;
   showProduct(productFilter);
   initiatePagination();
-  initCartButtons();
-    initFavoriteButtons();
   function showProduct(productFilter){
       list.innerHTML = '';
       productFilter.forEach(item => {
@@ -1269,16 +1267,12 @@
       });
       showProduct(productFilter);
       initiatePagination();
-      initCartButtons();
-      initFavoriteButtons();
   })
   
   filter.addEventListener('reset', function(event){
       productFilter = catalog;
       showProduct(productFilter);
       initiatePagination();
-      initCartButtons();
-      initFavoriteButtons();
   })
   
   
