@@ -12,17 +12,10 @@
 
   // Mobile filter navigation
   const filterToggle = document.querySelector("#js-filterToggle");
-  const filterToggleSubmit = document.querySelector("#js-filter-submit");
   if (filterToggle) {
     filterToggle.addEventListener("click", function () {
       root.classList.toggle("show-filter");
     });
-
-    if (window.innerWidth < 1170) {
-      filterToggleSubmit.addEventListener("click", function () {
-        root.classList.toggle("show-filter");
-      });
-    }
   }
 
   // Modal window for images
