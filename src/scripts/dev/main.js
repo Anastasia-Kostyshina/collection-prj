@@ -533,7 +533,7 @@
     initFavoriteButtons();
   }
 
-  // Modal window for images
+  // Класс для селекта
   const selectField = document.querySelector("#js-selectField");
 
   if(selectField) {
