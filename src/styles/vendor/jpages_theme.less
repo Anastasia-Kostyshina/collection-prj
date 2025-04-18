@@ -8,6 +8,7 @@
         color: @white;
         height: 52px;
         width: 52px;
+        transition: background-color .2s;
 
         @media @bw768 {
             height: 40px;
@@ -16,10 +17,21 @@
 
         &[href]:hover {
             color: @white;
+            background-color: @blue_light;
+        }
+
+        &:hover {
+            color: @white;
+            background-color: @blue--hover;
         }
     }
 }
 
 a {
     cursor: pointer;
+    transition: color .2s;
+
+    &:hover {
+        color: @blue--hover;
+    }
 }
