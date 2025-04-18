@@ -1211,7 +1211,7 @@
                   </picture>
                   <div class="product-card__info">
                       <div class="product-card__price">${item.price} ₽</div>
-                      <div class="product-card__description">Постер | <span class="product-card__size product-card__size--color">${item.size}</span></div>
+                      <div class="product-card__description">Постер | <span class="product-card__size product-card__size--color">${item.size} см</span></div>
                   </div>
   
                   <a href="detail.html" class="product-card__link"></a>
