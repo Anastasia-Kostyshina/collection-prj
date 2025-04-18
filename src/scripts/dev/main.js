@@ -289,11 +289,16 @@
   }
 
   // Initializing jQuery Selectric
+
+
   const jsSelectric = $(".js-selectric");
 
   if (jsSelectric.length) {
     jsSelectric.selectric({
-      nativeOnMobile: false
+      nativeOnMobile: false,
+      onOpen: function() {
+        $('.selectric-scroll').scrollbar();
+      }
     });
   }
 
