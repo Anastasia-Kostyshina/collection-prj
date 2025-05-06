@@ -56,14 +56,14 @@
         @media @bw1020 {
             position: absolute;
             left: 0;
-            top: 0;
+            top: 75px;
             width: 100%;
-            height: 100vh;
+            height: calc(100vh - 75px);
             flex-direction: column;
             align-items: flex-start;
             gap: 22px;
             margin-right: 0;
-            padding: 140px 30px 30px 25px;
+            padding: 65px 30px 30px 25px;
             background-color: @gray;
             transition: transform 0.4s;
             transform: translateX(-100%);
@@ -72,7 +72,7 @@
         }
 
         @media @bw768 {
-            padding: 130px 20px 20px 15px;
+            padding: 55px 20px 20px 15px;
         }
     }
 
